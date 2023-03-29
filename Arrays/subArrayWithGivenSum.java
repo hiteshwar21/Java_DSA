@@ -14,7 +14,6 @@ public class subArrayWithGivenSum {
     }
 
     void subArraySum(int[] arr, int sum){
-        int size = arr.length;
         int start = 0;
         int sum_till_calculation = 0;
         for (int j : arr) {
