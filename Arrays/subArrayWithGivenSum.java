@@ -22,7 +22,7 @@ public class subArrayWithGivenSum {
                 start++;
             }
             if (sum_till_calculation == sum) {
-                System.out.println("Sum found between indexes " + start + " and " + j);
+                System.out.println("Sum found between indexes " + start + " and " + (j-1));
                 return;
             }
             sum_till_calculation = sum_till_calculation + j;
