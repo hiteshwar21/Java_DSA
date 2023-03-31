@@ -13,19 +13,19 @@ public class subArrayWithGivenSum {
         arraySum.subArraySum(arr, sum);
     }
 
-    void subArraySum(int[] arr, int sum){
+    void subArraySum(int[] arr, int sum) {
         int start = 0;
         int sum_till_calculation = 0;
-        for (int j : arr) {
-            while (sum_till_calculation > sum && start<j-1){
-                sum_till_calculation = sum_till_calculation -arr[start];
+        for (int i=0; i<arr.length; i++) {
+            while (sum_till_calculation > sum && start < i-1) {
+                sum_till_calculation = sum_till_calculation - arr[start];
                 start++;
             }
             if (sum_till_calculation == sum) {
-                System.out.println("Sum found between indexes " + start + " and " + (j-1));
+                System.out.println("Sum found between indexes " + start + " and " + (i-1));
                 return;
             }
-            sum_till_calculation = sum_till_calculation + j;
+            sum_till_calculation = sum_till_calculation + arr[i];
         }
         System.out.println("Sum not found");
     }
