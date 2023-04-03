@@ -2,17 +2,7 @@ package LinkedLists;
 
 import java.util.Stack;
 
-public class summationOfTwoLinkedListNumbers {
-
-    static class Node {
-        int data;
-        Node next;
-
-        Node(int d){
-            data=d;
-            next=null;
-        }
-    }
+public class summationOfTwoLinkedListNumbers extends util{
 
     public static void main(String[] args) {
       summationOfTwoLinkedListNumbers summationOfTwoLinkedListNumbers = new summationOfTwoLinkedListNumbers();
@@ -28,7 +18,7 @@ public class summationOfTwoLinkedListNumbers {
 
     static Node getSum(Node first, Node second){
         Node result = null;
-        int a,b,carry = 0,sum = 0;
+        int a,b,carry = 0,sum;
         Stack s1 = new Stack();
         Stack s2 = new Stack();
         while(first != null){
@@ -58,6 +48,7 @@ public class summationOfTwoLinkedListNumbers {
         if(carry != 0){
             Node temp = new Node(carry);
             temp.next = result;
+            result = temp;
         }
         return result;
     }

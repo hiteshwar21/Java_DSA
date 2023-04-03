@@ -1,16 +1,6 @@
 package LinkedLists;
 
-public class findIntersectionInLL {
-
-    static class Node {
-        int data;
-        Node next;
-
-        Node(int d){
-            data=d;
-            next=null;
-        }
-    }
+public class findIntersectionInLL extends util{
 
     public static void main(String[] args) {
         findIntersectionInLL findIntersectionInLL = new findIntersectionInLL();

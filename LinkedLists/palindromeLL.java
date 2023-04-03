@@ -1,16 +1,6 @@
 package LinkedLists;
 
-public class palindromeLL {
-
-    static class Node {
-        int data;
-        Node next;
-        Node(int d)
-        {
-            data = d;
-            next = null;
-        }
-    }
+public class palindromeLL extends util{
 
     public static void main(String[] args) {
         palindromeLL linkedList = new palindromeLL();
@@ -48,7 +38,7 @@ public class palindromeLL {
 
     static void reverseFromSecondPointer(Node head){
         Node prev = null;
-        Node next = null;
+        Node next;
 
         while (head.next != null) {
             next = head.next;
