@@ -1,11 +1,11 @@
 package Arrays;
 
-public class dutchNationalFlag {
+public class dutchNationalFlag extends util{
 
     public static void main(String[] args) {
         int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
         sortDutchNationalFlag(arr);
-        System.out.println(arr);
+        printArray(arr);
     }
 
     static void sortDutchNationalFlag(int[] arr){

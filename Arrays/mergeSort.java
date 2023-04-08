@@ -1,11 +1,11 @@
 package Arrays;
 
-public class mergeSort {
+public class mergeSort extends util {
 
     public static void main(String[] args) {
         int[] arr = {1,3,2,4,6,5,7,9};
         int[] sortedArray = sortArray(arr, 0, arr.length-1);
-        System.out.println(sortedArray);
+        printArray(arr);
     }
 
     static int[] sortArray(int[] arr, int left, int right){
