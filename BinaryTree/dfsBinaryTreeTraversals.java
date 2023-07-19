@@ -1,6 +1,6 @@
 package BinaryTree;
 
-public class binaryTreeTraversals {
+public class dfsBinaryTreeTraversals {
 
     static class Node {
         int data;
