@@ -15,14 +15,14 @@ public class nodeOperations {
 
     static class BinaryTree{
         static int idx = -1;
-        public Node BuildTree(int[] node){
+        public Node buildTree(int[] node){
             idx++;
             if(idx>= node.length || node[idx] == -1){
                 return null;
             }
             Node newNode = new Node(node[idx]);
-            newNode.left = BuildTree(node);
-            newNode.right = BuildTree(node);
+            newNode.left = buildTree(node);
+            newNode.right = buildTree(node);
             return newNode;
         }
     }
@@ -30,12 +30,16 @@ public class nodeOperations {
     public static void main(String[] args) {
         int[] node = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1,-1};
         BinaryTree binaryTree = new BinaryTree();
-        Node root = binaryTree.BuildTree(node);
+        Node root = binaryTree.buildTree(node);
         System.out.println("Count of Nodes: " + getNodeCount(root));
         System.out.println("Sum of Nodes: " + getNodeSum(root));
         System.out.println("Height of Nodes: " + getNodeHeight(root));
-        //System.out.println("Diameter of Nodes: " + getNodeDiameter());
-
+        System.out.println("Diameter of Nodes: " + getNodeDiameter(root));
+        System.out.println("Max of Node: ");
+        System.out.println("Min of Node: ");
+        System.out.println("Search in Node: ");
+        System.out.println("Insert in Node: ");
+        System.out.println("Delete in Node: ");
     }
 
     static int getNodeCount(Node node){
@@ -65,8 +69,8 @@ public class nodeOperations {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    /*static int getNodeDiameter(Node node){
-        
-    }*/
+    static int getNodeDiameter(Node node){
+        return -1;
+    }
 
 }
