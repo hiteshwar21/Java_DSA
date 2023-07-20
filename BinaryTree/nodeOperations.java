@@ -70,7 +70,16 @@ public class nodeOperations {
     }
 
     static int getNodeDiameter(Node node){
-        return -1;
+        int diameter = 0;
+        if(node == null){
+            return diameter;
+        }
+        int lHeight = getNodeHeight(node.left);
+        int rHeight = getNodeHeight(node.right);
+        int lDiameter = getNodeDiameter(node.left);
+        int rDiameter = getNodeDiameter(node.right);
+        return Math.max(lHeight + rHeight + 1,
+                Math.max(lDiameter, rDiameter));
     }
 
 }
