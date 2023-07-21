@@ -1,4 +1,4 @@
-package Arrays.RePractise;
+package Arrays.RePractise.SlidingWindow;
 
 //Maximum Sum Subarray of size K | Sliding Window
 public class MaximumSumSubarraySizeK {

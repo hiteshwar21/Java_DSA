@@ -1,4 +1,4 @@
-package Arrays.RePractise;
+package Arrays.RePractise.SlidingWindow;
 
 import java.util.ArrayList;
 import java.util.List;
