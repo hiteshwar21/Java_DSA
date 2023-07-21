@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.OG;
 
 /*You are given an integer array nums of length n which represents a permutation of all the integers in the range [0, n - 1].
         1. The number of global inversions is the number of the different pairs (i, j) where:

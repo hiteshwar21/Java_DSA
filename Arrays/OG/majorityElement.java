@@ -1,11 +1,11 @@
-package Arrays;
+package Arrays.OG;
 
 public class majorityElement {
 
     public static void main(String[] args) {
         int[] arr = {3, 3, 4, 2, 4, 4, 2, 4, 4};
         int candidate = findCandidate(arr);
-        Boolean isMajority = checkMajority(candidate, arr);
+        boolean isMajority = checkMajority(candidate, arr);
         if(isMajority){
             System.out.println("Majority element is: " + candidate);
         }else{
@@ -36,10 +36,6 @@ public class majorityElement {
             if (arr[i] == candidate)
                 count++;
         }
-        if (count > arr.length / 2) {
-            return true;
-        } else {
-            return false;
-        }
+        return count > arr.length / 2;
     }
 }

@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.OG;
 
 public class mergeSort extends util {
 

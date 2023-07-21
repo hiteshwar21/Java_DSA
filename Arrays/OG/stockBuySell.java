@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.OG;
 
 public class stockBuySell {
     static int maxProfit(int[] prices, int size)

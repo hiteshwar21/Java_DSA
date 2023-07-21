@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.OG;
 
 /**
  * Given an array A[] of N integers.

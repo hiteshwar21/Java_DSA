@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.OG;
 
 /**
  * Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within an arr[] with the largest sum.
