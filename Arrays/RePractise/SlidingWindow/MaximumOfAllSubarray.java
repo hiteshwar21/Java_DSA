@@ -2,10 +2,7 @@ package Arrays.RePractise.SlidingWindow;
 
 import jdk.jshell.execution.Util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 /*Given an array arr[] of size N and an integer K. Find the maximum for each and every contiguous subarray of size K.
 
@@ -19,6 +16,7 @@ import java.util.Vector;
 public class MaximumOfAllSubarray {
     public static void main(String[] args) {
         int[] arr = {1, 3, -1, -3, 5, 3, 6, 7};
+        int[] arr1 = {5,4,3,2,1};
         int windowSize = 3;
         int[] result = getMaxAllSubArray(arr, arr.length, windowSize);
     }
@@ -26,28 +24,21 @@ public class MaximumOfAllSubarray {
     static int[] getMaxAllSubArray(int[] arr, int size, int windowSize){
         int[] result = new int[size-windowSize+1];
         int start = 0, end = 0;
-        int max = arr[0];
-        int secondMax = arr[0];
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(Collections.reverseOrder());
         while(end<size) {
             if(end-start< windowSize){
-                if(arr[end]>max){
-                    secondMax = max;
-                    max = arr[end];
-                }
+                minHeap.add(arr[end]);
             } else {
-                result[start] = max;
-                if(arr[start] == max){
-                    max = secondMax;
+                result[start] = minHeap.peek();
+                if(arr[start] == minHeap.peek()){
+                    minHeap.poll();
                 }
-                if(arr[end]>max) {
-                    secondMax = max;
-                    max = arr[end];
-                }
+                minHeap.add(arr[end]);
                 start++;
             }
             end++;
         }
-        result[start] = max;
+        result[start] = minHeap.poll();
         return result;
     }
 }
