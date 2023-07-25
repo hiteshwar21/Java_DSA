@@ -15,6 +15,7 @@ public class LargestSubArrayOfSumK {
         System.out.println(getLargestSubArrayForGivenSum(arr, arr.length, requiredSum));
     }
 
+    //This will only work for Non-Negative Integers
     static int getLargestSubArrayForGivenSum(int[] arr, int size, int requiredSum){
         int start = 0, end = 0;
         int max = -1;
