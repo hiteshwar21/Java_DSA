@@ -1,4 +1,4 @@
-package Arrays.RePractise.SlidingWindow;
+package Strings;
 
 /*Given a word pat and a text txt. Return the count of the occurrences of anagrams of the word in the text.
 
