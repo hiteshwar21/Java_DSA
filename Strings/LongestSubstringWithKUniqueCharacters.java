@@ -1,7 +1,6 @@
 package Strings;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /*Given a string you need to print the size of the longest possible substring that has exactly k unique characters.
         Example:
@@ -31,15 +30,13 @@ public class LongestSubstringWithKUniqueCharacters {
             if(map.size() == desiredCount){
                 maxCount = Math.max(maxCount, end-start+1);
             }
-            if(map.size()>desiredCount){
-                while (map.size() > desiredCount){
+            while (map.size() > desiredCount){
                     char charStart = parent.charAt(start);
                     map.put(charStart, map.get(charStart)-1);
                     if(map.get(charStart) == 0){
                         map.remove(charStart);
                     }
                     start++;
-                }
             }
             end++;
         }
