@@ -39,7 +39,7 @@ public class MinWindowSubstring {
                 maxStart = start;
             }
             char charEnd = parentString.charAt(end);
-            answerMap.put(charEnd, requiredMap.getOrDefault(charEnd,0 )+1);
+            answerMap.put(charEnd, answerMap.getOrDefault(charEnd,0 )+1);
             if (answerMap.get(charEnd).equals(requiredMap.get(charEnd))){
                 count--;
             }
