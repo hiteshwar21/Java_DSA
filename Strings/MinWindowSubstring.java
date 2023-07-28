@@ -18,12 +18,50 @@ import java.util.HashMap;
         Output: "a"*/
 public class MinWindowSubstring {
     public static void main(String[] args) {
-        String parentString = "ADOBECODEBANC";
+        String parentString = "ABCADOBECODEBANC";
         String minRequiredSubstring  = "ABC";
         System.out.println(getMinWindowSubstring(parentString, minRequiredSubstring));
+        System.out.println(getMinWindowSubstring2(parentString, minRequiredSubstring));
     }
 
     static String getMinWindowSubstring(String parentString, String minRequiredSubstring){
+        int start = 0, end = 0;
+        HashMap<Character, Integer> requiredMap = new HashMap<>();
+        int maxStart = 0, minEnd = 0;
+        for(int i=0; i<minRequiredSubstring.length(); i++) {
+            char ch = minRequiredSubstring.charAt(i);
+            requiredMap.put(ch, requiredMap.getOrDefault(ch, 0)+1);
+        }
+        int count =requiredMap.size();
+        while (end < parentString.length()){
+            if(count == 0 && (minEnd ==0 || end-start+1< minEnd-maxStart+1)){
+                minEnd = end;
+                maxStart = start;
+            }
+            char charEnd = parentString.charAt(end);
+            if (requiredMap.containsKey(charEnd)){
+                requiredMap.put(charEnd, requiredMap.get(charEnd)-1);
+            }
+            char charStart = parentString.charAt(start);
+            if(requiredMap.containsKey(charStart) && requiredMap.get(charStart)<0){
+                while (requiredMap.get(parentString.charAt(start)) == null || requiredMap.get(parentString.charAt(start))<0){
+                    if(requiredMap.containsKey(parentString.charAt(start))) {
+                        requiredMap.put(parentString.charAt(start), requiredMap.get(parentString.charAt(start)) + 1);
+                    }
+                    start++;
+                }
+            }
+
+            end++;
+        }
+        if(count == 0 && (minEnd == 0 || end-start+1 < minEnd-maxStart+1)){
+            minEnd = end;
+            maxStart = start;
+        }
+        return parentString.substring(maxStart, minEnd);
+    }
+
+    static String getMinWindowSubstring2(String parentString, String minRequiredSubstring){
         int start = 0, end = 0;
         HashMap<Character, Integer> requiredMap = new HashMap<>();
         HashMap<Character,Integer> answerMap = new HashMap<>();
