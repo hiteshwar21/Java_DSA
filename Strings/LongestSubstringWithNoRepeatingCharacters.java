@@ -44,11 +44,7 @@ public class LongestSubstringWithNoRepeatingCharacters {
         HashMap<Character, Integer> hashMap = new HashMap<>();
         while (end< parent.length()){
             char charEnd = parent.charAt(end);
-            if(hashMap.containsKey(charEnd)){
-                hashMap.put(charEnd, hashMap.get(charEnd)+1);
-            } else {
-                hashMap.put(charEnd, 1);
-            }
+            hashMap.put(charEnd, hashMap.getOrDefault(charEnd, 0)+1);
             while(hashMap.size() < end-start+1){
                 char charStart = parent.charAt(start);
                 hashMap.put(charStart, hashMap.get(charStart)-1);

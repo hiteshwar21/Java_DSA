@@ -27,11 +27,7 @@ public class LongestSubstringWithKUniqueCharacters {
         int maxCount = 0;
         while(end<parent.length()){
             char charEnd = parent.charAt(end);
-            if(map.containsKey(charEnd)) {
-                map.put(charEnd, map.get(charEnd) + 1);
-            } else{
-                map.put(charEnd, 1);
-            }
+            map.put(charEnd, map.getOrDefault(charEnd,0) + 1);
             if(map.size() == desiredCount){
                 maxCount = Math.max(maxCount, end-start+1);
             }

@@ -24,11 +24,7 @@ public class pickToysWithKUniqueElements {
         HashMap<Character, Integer> hashMap = new HashMap<>();
         while (end<parent.length()){
             char charEnd = parent.charAt(end);
-            if(hashMap.get(charEnd) == null){
-                hashMap.put(charEnd, 1);
-            } else{
-                hashMap.put(charEnd, hashMap.get(charEnd));
-            }
+            hashMap.put(charEnd, hashMap.getOrDefault(charEnd,0)+1);
             if (hashMap.size() == uniqueCount){
                 maxCount = Math.max(maxCount, end-start+1);
             }
