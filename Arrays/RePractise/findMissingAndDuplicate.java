@@ -9,20 +9,21 @@ public class findMissingAndDuplicate {
     }
 
     static void getMissingAndDuplicate(int[] arr){
-        int end = 0;
+        int index = 0;
         int temp;
-        while (end< arr.length){
-            if(arr[end]!= end+1){
-                //SwapLogic
-                if(arr[arr[end]-1] == arr[end]){
-                    end++;
+        while (index< arr.length){
+            if(arr[index]!= index+1){
+                //If Duplicate value, we can move on
+                if(arr[arr[index]-1] == arr[index]){
+                    index++;
                 } else {
-                    temp = arr[end];
-                    arr[end] = arr[arr[end] - 1];
-                    arr[arr[end] - 1] = temp;
+                    //SwapLogic - We are doing Swap Sort. We are just putting the wrong value present at an index to its ideal index position
+                    temp = arr[index];
+                    arr[index] = arr[arr[index] - 1];
+                    arr[arr[index] - 1] = temp;
                 }
             } else {
-                end++;
+                index++;
             }
         }
 
