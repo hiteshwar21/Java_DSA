@@ -17,7 +17,7 @@ public class findMissingAndDuplicate {
                 if(arr[arr[index]-1] == arr[index]){
                     index++;
                 } else {
-                    //SwapLogic - We are doing Swap Sort. We are just putting the wrong value present at an index to its ideal index position
+                    //SwapLogic - We are doing Swap Sort. We are just putting the wrong value present at an index to its ideal index position.
                     temp = arr[index];
                     arr[index] = arr[arr[index] - 1];
                     arr[arr[index] - 1] = temp;

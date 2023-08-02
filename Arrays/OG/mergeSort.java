@@ -5,7 +5,7 @@ public class mergeSort extends util {
     public static void main(String[] args) {
         int[] arr = {1,3,2,4,6,5,7,9};
         int[] sortedArray = sortArray(arr, 0, arr.length-1);
-        printArray(arr);
+        printArray(sortedArray);
     }
 
     static int[] sortArray(int[] arr, int left, int right){
@@ -26,9 +26,9 @@ public class mergeSort extends util {
         int[] leftArray = new int[la];
         int[] rightArray = new int[ra];
 
-        for (int i = 0; i < la; ++i)
+        for (int i = 0; i < la; i++)
             leftArray[i] = arr[left + i];
-        for (int j = 0; j < (ra); ++j)
+        for (int j = 0; j < ra; j++)
             rightArray[j] = arr[middle + 1 + j];
 
         int i = 0, j = 0, k = left;
