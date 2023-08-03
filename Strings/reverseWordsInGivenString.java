@@ -1,14 +1,34 @@
 package Strings;
 
+import java.util.Stack;
+
 public class reverseWordsInGivenString {
     public static void main(String[] args) {
         String original = "I love you";
-        String reverse = reverseWords(original);
+        String reverse = reverseWordsStack(original);
         System.out.println(reverse);
+    }
+
+    static String reverseWordsStack(String original){
+        String[] components = original.split(" ");
+        Stack stack = new Stack();
+        for (int i =0;i< components.length;i++){
+            stack.push(components[i]);
+        }
+        String result = "";
+        while (!stack.isEmpty()) {
+            if (result.length() == 0) {
+                result = result + stack.pop();
+            } else {
+                result = result + " " + stack.pop();
+            }
+        }
+        return result;
     }
 
     static String reverseWords(String original){
         int left, i=0, size = original.length();
+        //remove extra space at the very start
         while(original.charAt(i) == ' '){
             i++;
         }
