@@ -19,10 +19,14 @@ public class NextLargestElement {
             if (stack.isEmpty()){
                 result[i] = -1;
             } else {
-                while (!stack.isEmpty() && stack.peek()<=arr[i]){
+                while (!stack.isEmpty() && stack.peek() <= arr[i]) {
                     stack.pop();
                 }
-                result[i] = stack.peek();
+                if (stack.isEmpty()) {
+                    result[i] = -1;
+                } else {
+                    result[i] = stack.peek();
+                }
             }
             stack.push(arr[i]);
         }
