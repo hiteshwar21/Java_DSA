@@ -16,17 +16,13 @@ public class NextLargestElement {
         int size = arr.length;
         int[] result = new int[size];
         for(int i = size-1;i>=0;i--){
-            if (stack.isEmpty()){
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) {
+                stack.pop();
+            }
+            if (stack.isEmpty()) {
                 result[i] = -1;
             } else {
-                while (!stack.isEmpty() && stack.peek() <= arr[i]) {
-                    stack.pop();
-                }
-                if (stack.isEmpty()) {
-                    result[i] = -1;
-                } else {
-                    result[i] = stack.peek();
-                }
+                result[i] = stack.peek();
             }
             stack.push(arr[i]);
         }
