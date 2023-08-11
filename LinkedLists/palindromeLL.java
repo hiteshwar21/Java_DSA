@@ -26,9 +26,8 @@ public class palindromeLL extends util{
         }
 
         if(fast == null){
-            secondPointer = slow.next;
-        }
-        if(fast.next == null){
+            secondPointer = slow;
+        } else if(fast.next == null){
             secondPointer = slow.next;
         }
 

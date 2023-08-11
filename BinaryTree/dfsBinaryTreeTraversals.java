@@ -54,9 +54,6 @@ public class dfsBinaryTreeTraversals {
             System.out.println(node.data + " ");
             printInOrder(node.right);
         }
-
-        public void printLevelOrder(Node node){
-        }
     }
 
     public static void main(String[] args) {
@@ -72,7 +69,5 @@ public class dfsBinaryTreeTraversals {
         binaryTree.printPostOrder(root);
         //InOrder Traversal
         binaryTree.printInOrder(root);
-        //LevelOrder Traversal
-        binaryTree.printLevelOrder(root);
     }
 }
