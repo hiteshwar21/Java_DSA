@@ -33,7 +33,7 @@ public class KClosestNumber {
     static void getKClosest(int[] arr, int x, int k){
         PriorityQueue<Pair> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         for(int i=0;i< arr.length;i++){
-            maxHeap.add(new Pair((arr[i]-x), arr[i]));
+            maxHeap.add(new Pair(Math.abs(arr[i]-x), arr[i]));
             if(i>k){
                 maxHeap.poll();
             }
