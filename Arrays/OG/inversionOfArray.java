@@ -1,7 +1,6 @@
 package Arrays.OG;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.PriorityQueue;
 
 // int[] arr = {8,4,2,1}

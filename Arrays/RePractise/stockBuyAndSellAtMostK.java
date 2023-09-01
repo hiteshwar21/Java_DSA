@@ -10,6 +10,9 @@ public class stockBuyAndSellAtMostK {
         System.out.println("Maximum profit is: " + maxProfit(arr, k));
     }
 
+
+    /* profit vector stores the maximum profit using at most i transactions up to the current day,
+       prevDiff vector stores the maximum difference obtained by subtracting the price of the previous day.*/
     static int maxProfit(int[] arr, int k) {
         int[] profit = new int[k + 1];
         int[] prevDiff = new int[k + 1];
