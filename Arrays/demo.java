@@ -1,6 +1,10 @@
 package Arrays;
 
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Vector;
+
 public class demo {
         public static void main(String[] args) {
             String s = "?RW?WR";
@@ -62,4 +66,15 @@ public class demo {
                 }
             }
         }
+
+
+    static class Pair{
+        int start;
+        int end;
+
+        Pair(int s, int e){
+            this.start = s;
+            this.end = e;
+        }
+    }
     }

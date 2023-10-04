@@ -31,17 +31,21 @@ public class BFSandDFS {
         }
         graph[0].add(new Edge(0, 1, 1));
         graph[0].add(new Edge(0, 2, 1));
+
         graph[1].add(new Edge(1, 0, 1));
         graph[1].add(new Edge(1, 3, 1));
-        graph[2].add(new Edge(2, 0, 1));
 
+        graph[2].add(new Edge(2, 0, 1));
         graph[2].add(new Edge(2, 4, 1));
+
         graph[3].add(new Edge(3, 1, 1));
         graph[3].add(new Edge(3, 4, 1));
         graph[3].add(new Edge(3, 5, 1));
+
         graph[4].add(new Edge(4, 2, 1));
         graph[4].add(new Edge(4, 3, 1));
         graph[4].add(new Edge(4, 5, 1));
+
         graph[5].add(new Edge(5, 3, 1));
         graph[5].add(new Edge(5, 4, 1));
         graph[5].add(new Edge(5, 6, 1));
@@ -76,15 +80,14 @@ public class BFSandDFS {
         System.out.println();
     }
 
-    static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited){
-        if(visited[curr]){
-            return;
-        }
+    static void dfs(ArrayList<Edge>[] graph, int curr, boolean[] visited) {
         System.out.println(curr + " ");
         visited[curr] = true;
-        for(int i=0;i<graph[curr].size();i++){
+        for (int i = 0; i < graph[curr].size(); i++) {
             Edge edge = graph[curr].get(i);
-            dfs(graph, edge.dest, visited);
+            if (visited[curr]) {
+                dfs(graph, edge.dest, visited);
+            }
         }
     }
 }

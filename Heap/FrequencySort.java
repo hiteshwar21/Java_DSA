@@ -28,6 +28,7 @@ public class FrequencySort {
     public static void main(String[] args) {
         int[] arr = {2, 5, 2, 8, 5, 6, 8, 8};
         sortByFrequency(arr);
+        findLeastNumOfUniqueInts(arr, 2);
     }
 
     static void sortByFrequency(int[] arr){
@@ -43,5 +44,42 @@ public class FrequencySort {
         while (!maxHeap.isEmpty()){
             System.out.print(maxHeap.poll().data + " ");
         }
+    }
+
+    public static int findLeastNumOfUniqueInts(int[] arr, int k) {
+        if(k >= arr.length){
+            return 0;
+        }
+        PriorityQueue<Pair> minHeap = new PriorityQueue<>();
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for(int i: arr){
+            hashMap.put(i, hashMap.getOrDefault(i,0)+1);
+        }
+        for(Map.Entry<Integer, Integer> map : hashMap.entrySet()){
+            minHeap.add(new Pair(map.getValue(), map.getKey()));
+        }
+        for(int i=k;i>0;i--){
+            int freq = minHeap.peek().freq;
+            if(freq == 0){
+                minHeap.poll();
+                freq = minHeap.peek().freq;
+            }
+            freq--;
+        }
+        return minHeap.size();
+    }
+
+    public int heightChecker(int[] heights) {
+        int count =0;
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for(int i=0;i<heights.length;i++){
+            minHeap.add(heights[i]);
+        }
+        for(int i=0;i<heights.length;i++){
+            if(heights[i]!= minHeap.poll()){
+                count++;
+            }
+        }
+        return count;
     }
 }
