@@ -22,6 +22,7 @@ public class MinWindowSubstring {
         String minRequiredSubstring  = "ABC";
         System.out.println(getMinWindowSubstring(parentString, minRequiredSubstring));
         System.out.println(getMinWindowSubstring2(parentString, minRequiredSubstring));
+        System.out.println(minWindow(parentString, minRequiredSubstring));
     }
 
     static String getMinWindowSubstring(String parentString, String minRequiredSubstring){
@@ -101,5 +102,52 @@ public class MinWindowSubstring {
             maxStart = start;
         }
         return parentString.substring(maxStart, minEnd);
+    }
+
+    public static String minWindow(String bigSet, String smallSet) {
+        if(smallSet.length()>bigSet.length()){
+            return "";
+        }
+        HashMap<Character, Integer> map = new HashMap<>();
+        char[] smallChars = smallSet.toCharArray();
+        for(char smallChar : smallChars){
+            map.put(smallChar, map.getOrDefault(smallChar, 0)+1);
+        }
+        HashMap<Character, Integer> rMap = new HashMap<>();
+        int rCount = map.size();
+        int resultStart = 0, resultEnd = 0;
+
+        boolean change = false;
+
+        int start=0, end=0;
+        while(end<bigSet.length()){
+            char charEnd = bigSet.charAt(end);
+            if(map.containsKey(charEnd)){
+                rMap.put(charEnd, rMap.getOrDefault(charEnd, 0)+1);
+                if(rMap.get(charEnd)==map.get(charEnd)){
+                    rCount--;
+                }
+            }
+            if(rCount == 0){
+                while(!map.containsKey(bigSet.charAt(start)) || (map.containsKey(bigSet.charAt(start)) && map.get(bigSet.charAt(start))<rMap.get(bigSet.charAt(start)))) {
+                    if(!map.containsKey(bigSet.charAt(start))){
+
+                    } else if(map.get(bigSet.charAt(start))<rMap.get(bigSet.charAt(start))) {
+                        rMap.put(bigSet.charAt(start), rMap.get(bigSet.charAt(start)) - 1);
+                    }
+                    start++;
+                }
+                if(!change || resultEnd-resultStart>end-start){
+                    change = true;
+                    resultEnd = end;
+                    resultStart = start;
+                }
+            }
+            end++;
+        }
+        if(!change){
+            return "";
+        }
+        return bigSet.substring(resultStart, resultEnd+1);
     }
 }

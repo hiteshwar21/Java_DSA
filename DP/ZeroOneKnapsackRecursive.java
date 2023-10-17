@@ -28,7 +28,7 @@ public class ZeroOneKnapsackRecursive {
         if(size == 0 || maxWeight == 0){
             return 0;
         }
-        //Choice Diagram. If wieght is less than MaxWeight, We can either choose or leave it. It is represented here.
+        //Choice Diagram. If weight is less than MaxWeight, We can either choose or leave it. It is represented here.
         if (weights[size-1]<=maxWeight){
             return Math.max(profits[size-1]+getMaxProfit(profits, weights, size-1, maxWeight-weights[size-1]),
                     getMaxProfit(profits, weights, size-1, maxWeight));
