@@ -1,4 +1,4 @@
-package MockPractise;
+package Interview;
 
 import java.util.ArrayList;
 import java.util.HashMap;

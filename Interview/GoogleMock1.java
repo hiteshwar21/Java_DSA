@@ -1,4 +1,4 @@
-package MockPractise;
+package Interview;
 
 public class GoogleMock1 {
     // Never give up

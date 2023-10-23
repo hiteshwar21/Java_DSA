@@ -1,4 +1,4 @@
-package MockPractise;
+package Interview;
 
 public class Salesforce {
     static int addNumbers(int[][] grid) {
