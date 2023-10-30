@@ -1,4 +1,4 @@
-package DP;
+package DP.Old;
 
 /*Given N items where each item has some weight and profit associated with it and also given a bag with capacity W,
   [i.e., the bag can hold at most W weight in it].
@@ -18,7 +18,6 @@ public class ZeroOneKnapsackRecursive {
         int size = 3;
         int[] profit = {1,2,3};
         int[] weight = {4,5,1};
-
         int maxWeight = 4;
         System.out.println(getMaxProfit(profit,weight, size, maxWeight));
     }
