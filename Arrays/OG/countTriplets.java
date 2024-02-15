@@ -2,9 +2,10 @@ package Arrays.OG;
 
 /**
  * Given an array A[] of N integers.
- * The task is to find the number of triples (i, j, k) , where i, j, k are indices and (1 <= i < j < k <= N),
+ * The task is to find the number of triples (i, j, k) , where i, j, k are indices and (0 <= i <= j <= k <= N),
  * such that in the set { A_i   , A_j   , A_k   } at least one of the numbers can be written as the sum of the other two.
  * Input : A[] = {1, 2, 3, 4, 5}
+ * Input : A[] = {0,1,1,0,0,1,0,2,2,4}
  * Output : 4
  */
 public class countTriplets {

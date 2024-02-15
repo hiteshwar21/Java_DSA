@@ -38,8 +38,8 @@ public class ReverseInGroup {
         head = reverseInGroupRecursive(head,3);
         printLinkedList();
 
-        head = reverseInGroupIterative(head,3);
-        printLinkedList();
+        //head = reverseInGroupIterative(head,3);
+        //printLinkedList();
     }
 
     static Node reverseInGroupRecursive(Node node, int size){

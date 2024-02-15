@@ -66,6 +66,15 @@ public class EPAM {
                                 (e1,e2) -> e1, LinkedHashMap::new));
         System.out.println(genderCount);
         System.out.println(sortedGenderCount);
+        // Sample list of genders
+        List<String> genderList = Arrays.asList("Male", "Female", "Male", "Female", "Non-Binary", "Male", "Female");
+
+        // Using Streams and Lambda to find the count of different genders
+        Map<String, Long> genderCountMap = genderList.stream()
+                .collect(Collectors.groupingBy(String::toLowerCase, Collectors.counting()));
+
+        // Print the result
+        System.out.println("Gender Count: " + genderCountMap);
         System.out.println("Small Count to Right will be : " + getSmallCountToRight(arr));
     }
 
@@ -93,5 +102,7 @@ public class EPAM {
         }
         return count;
     }
+
+
 
 }

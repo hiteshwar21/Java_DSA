@@ -19,7 +19,7 @@ public class chocolateDistribution {
 
         int minDiff = Integer.MAX_VALUE;
 
-        for (int i=0;i<i+numKids-1;i++){
+        for (int i=0;i+numKids-1<arr.length;i++){
             int diff = arr[i+numKids-1]-arr[i];
             if (diff < minDiff){
                 minDiff = diff;

@@ -1,6 +1,6 @@
 package Arrays.RePractise.HashMap;
 
-//Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within a arr[] with the largest sum.
+//Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within an arr[] with the largest sum.
 // https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 public class LargestSumContigousSubArray {
     public static void main(String[] args) {

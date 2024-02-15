@@ -34,7 +34,7 @@ public class KClosestNumber {
         PriorityQueue<Pair> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         for(int i=0;i< arr.length;i++){
             maxHeap.add(new Pair(Math.abs(arr[i]-x), arr[i]));
-            if(i>k){
+            if(i>=k){
                 maxHeap.poll();
             }
         }
