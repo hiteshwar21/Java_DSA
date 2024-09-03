@@ -1,11 +1,12 @@
 package DP.Old;
 
-public class subsetSumWithGivenSum {
+public class subsetCountWithGivenSum {
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 3};
         int sum = 6;
         int count = perfectSum(arr, sum);
+        System.out.println(count);
     }
 
 
