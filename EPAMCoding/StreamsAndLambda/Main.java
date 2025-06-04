@@ -18,5 +18,9 @@ public class Main {
         SortingInStreams.basicSort();
         SortingInStreams.sortUsingComparator();
         SortingInStreams.sortUsingMultipleConditions();
+
+        DuplicateElements.collectDuplicates();
+        SecondHighestSalary.getSecondHighestSalary();
+        GroupEmpByDepartment.groupEmpByDepartment();
     }
 }
