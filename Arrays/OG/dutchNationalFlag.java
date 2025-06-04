@@ -8,7 +8,7 @@ public class dutchNationalFlag extends util {
         printArray(arr);
     }
 
-    static void sortDutchNationalFlag(int[] arr){
+    static void sortDutchNationalFlag(int[] arr) {
         int low = 0;
         int hi = arr.length - 1;
         int middle = 0;
