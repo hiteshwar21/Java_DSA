@@ -1,9 +1,6 @@
 package EPAMCoding.StreamsAndLambda;
 
-import lombok.Getter;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class SortingInStreams {
     static List<String> names = List.of("Alice", "Bob");
@@ -12,7 +9,6 @@ public class SortingInStreams {
         List<String> sortedNames = names.stream()
                 .sorted()
                 .toList();
-
         System.out.println(sortedNames);
     }
 
