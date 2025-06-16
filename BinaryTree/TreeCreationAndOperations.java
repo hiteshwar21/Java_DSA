@@ -1,4 +1,4 @@
-package BinaryTree.Practise;
+package BinaryTree;
 
 public class TreeCreationAndOperations {
 
