@@ -38,7 +38,7 @@ public class Subsets {
         for(int i = start; i < nums.length; i++) {
             currentList.add(nums[i]);
             storeSubsetByBackTrack(currentList, nums, i + 1, resultList);
-            currentList.remove(currentList.size() - 1);O
+            currentList.remove(currentList.size() - 1);
         }
     }
 }
